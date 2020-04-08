@@ -1,24 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+//Pages
+import Home from "./Pages/Home";
+import SafetyPrecautions from "./Pages/SafetyPrecautions";
+import Helpline from "./Pages/Helpline";
+import LatestUpdates from "./Pages/LatestUpdates";
+import DeepDive from "./Pages/DeepDive";
+
+//Components
+import Navbar from "./Components/Navbar";
+
+//MUI
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navbar />
+        <div className="container">
+          <Switch>
+            <Route path="/LatestUpdates">
+              <LatestUpdates />
+            </Route>
+            <Route path="/DeepDive">
+              <DeepDive />
+            </Route>
+            <Route path="/Helpline">
+              <Helpline />
+            </Route>
+            <Route path="/SafetyPrecautions">
+              <SafetyPrecautions />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
