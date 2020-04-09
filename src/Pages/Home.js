@@ -101,7 +101,7 @@ const Home = () => {
       </Typography>
       <Divider className={classes.divider} />
       <Grid container spacing={3}>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <Typography className={classes.subHeading} variant="h4" gutterBottom>
             Covid-19 Cases Overview in India
           </Typography>
@@ -163,7 +163,7 @@ const Home = () => {
             </Table>
           </TableContainer>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <Typography className={classes.subHeading} variant="h4" gutterBottom>
             Most Affected Countries by Covid-19
           </Typography>
