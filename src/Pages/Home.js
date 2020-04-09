@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import axios from "axios";
+import TimeSeriesChart from "../Components/Charts/TimeSeriesChart";
 
 //mui
 import Typography from "@material-ui/core/Typography";
@@ -13,6 +14,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Divider from "@material-ui/core/Divider";
+import Button from "@material-ui/core/Button";
 
 const styles = makeStyles({
   heading: {
@@ -29,16 +31,17 @@ const styles = makeStyles({
   },
   block: {
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     minHeight: 70,
   },
   blockText: {
     textAlign: "center",
-    marginBottom: 5,
   },
   dataText: {
-    padding: 5,
+    paddingLeft: 5,
+    paddingRight: 5,
   },
   divider: {
     marginBottom: 20,
@@ -51,6 +54,7 @@ const Home = () => {
   const [countryData, setCountryData] = useState([]);
   const [India, setIndia] = useState({});
   const [World, setWorld] = useState({});
+  const [timeSeriesAxis, setTimeSeriesAxis] = useState("linear");
 
   useEffect(() => {
     getStateData();
@@ -78,9 +82,19 @@ const Home = () => {
       <TableCell component="th" scope="row">
         {state.State}
       </TableCell>
-      <TableCell align="right">{state.Cases}</TableCell>
-      <TableCell align="right">{state.Deaths}</TableCell>
-      <TableCell align="right">{state.Recovered}</TableCell>
+      <TableCell align="right">
+        <Typography variant="body2">{state.Cases}</Typography>
+      </TableCell>
+      <TableCell align="right">
+        <Typography variant="body2" color="secondary">
+          {state.Deaths}
+        </Typography>
+      </TableCell>
+      <TableCell align="right">
+        <Typography variant="body2" color="primary">
+          {state.Recovered}
+        </Typography>
+      </TableCell>
     </TableRow>
   ));
   const rowsCountry = countryData.map((country) => (
@@ -88,57 +102,67 @@ const Home = () => {
       <TableCell component="th" scope="row">
         {country.Country}
       </TableCell>
-      <TableCell align="right">{country.Cases}</TableCell>
-      <TableCell align="right">{country.Deaths}</TableCell>
-      <TableCell align="right">{country.Recovered}</TableCell>
+      <TableCell align="right">
+        <Typography variant="body2">{country.Cases}</Typography>
+      </TableCell>
+      <TableCell align="right">
+        <Typography variant="body2" color="secondary">
+          {country.Deaths}
+        </Typography>
+      </TableCell>
+      <TableCell align="right">
+        <Typography variant="body2" color="primary">
+          {country.Recovered}
+        </Typography>
+      </TableCell>
     </TableRow>
   ));
 
   return (
     <Fragment>
-      <Typography className={classes.heading} variant="h2" gutterBottom>
+      <Typography className={classes.heading} variant="h3" gutterBottom>
         Covid-19 India Tracker
       </Typography>
       <Divider className={classes.divider} />
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
-          <Typography className={classes.subHeading} variant="h4" gutterBottom>
+          <Typography className={classes.subHeading} variant="h5" gutterBottom>
             Covid-19 Cases Overview in India
           </Typography>
           <Grid className={classes.blockGrid} container spacing={1}>
             <Grid item xs>
-              <Typography className={classes.blockText} variant="h6">
-                Total Cases
-              </Typography>
               <Paper className={classes.block}>
-                <Typography className={classes.dataText} variant="h3">
+                <Typography className={classes.blockText} variant="body1">
+                  Total Cases
+                </Typography>
+                <Typography className={classes.dataText} variant="h5">
                   {India.Cases}
                 </Typography>
               </Paper>
             </Grid>
             <Grid item xs>
-              <Typography className={classes.blockText} variant="h6">
-                Deaths
-              </Typography>
               <Paper className={classes.block}>
+                <Typography className={classes.blockText} variant="body1">
+                  Deaths
+                </Typography>
                 <Typography
                   className={classes.dataText}
                   color="secondary"
-                  variant="h3"
+                  variant="h5"
                 >
                   {India.Deaths}
                 </Typography>
               </Paper>
             </Grid>
             <Grid item xs>
-              <Typography className={classes.blockText} variant="h6">
-                Recovered
-              </Typography>
               <Paper className={classes.block}>
+                <Typography className={classes.blockText} variant="body1">
+                  Recovered
+                </Typography>
                 <Typography
                   className={classes.dataText}
                   color="primary"
-                  variant="h3"
+                  variant="h5"
                 >
                   {India.Recovered}
                 </Typography>
@@ -164,67 +188,97 @@ const Home = () => {
           </TableContainer>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <Typography className={classes.subHeading} variant="h4" gutterBottom>
-            Most Affected Countries by Covid-19
-          </Typography>
-          <Grid className={classes.blockGrid} container spacing={1}>
-            <Grid item xs>
-              <Typography className={classes.blockText} variant="h6">
-                Total Cases
+          <Grid container spacing={5}>
+            <Grid item xs={12}>
+              <Typography
+                className={classes.subHeading}
+                variant="h5"
+                gutterBottom
+              >
+                Most Affected Countries by Covid-19
               </Typography>
-              <Paper className={classes.block}>
-                <Typography className={classes.dataText} variant="h3">
-                  {World.Cases}
-                </Typography>
-              </Paper>
-            </Grid>
-            <Grid item xs>
-              <Typography className={classes.blockText} variant="h6">
-                Deaths
-              </Typography>
-              <Paper className={classes.block}>
-                <Typography
-                  className={classes.dataText}
-                  color="secondary"
-                  variant="h3"
+
+              <Grid className={classes.blockGrid} container spacing={1}>
+                <Grid item xs>
+                  <Paper className={classes.block}>
+                    <Typography className={classes.blockText} variant="body1">
+                      Total Cases
+                    </Typography>
+                    <Typography className={classes.dataText} variant="h5">
+                      {World.Cases}
+                    </Typography>
+                  </Paper>
+                </Grid>
+                <Grid item xs>
+                  <Paper className={classes.block}>
+                    <Typography className={classes.blockText} variant="body1">
+                      Deaths
+                    </Typography>
+                    <Typography
+                      className={classes.dataText}
+                      color="secondary"
+                      variant="h5"
+                    >
+                      {World.Deaths}
+                    </Typography>
+                  </Paper>
+                </Grid>
+                <Grid item xs>
+                  <Paper className={classes.block}>
+                    <Typography className={classes.blockText} variant="body1">
+                      Recovered
+                    </Typography>
+                    <Typography
+                      className={classes.dataText}
+                      color="primary"
+                      variant="h5"
+                    >
+                      {World.Recovered}
+                    </Typography>
+                  </Paper>
+                </Grid>
+              </Grid>
+
+              <TableContainer component={Paper}>
+                <Table
+                  className={classes.table}
+                  size="small"
+                  aria-label="a dense table"
                 >
-                  {World.Deaths}
-                </Typography>
-              </Paper>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>Country</TableCell>
+                      <TableCell align="right">Cases</TableCell>
+                      <TableCell align="right">Deaths</TableCell>
+                      <TableCell align="right">Recovered</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>{rowsCountry}</TableBody>
+                </Table>
+              </TableContainer>
             </Grid>
-            <Grid item xs>
-              <Typography className={classes.blockText} variant="h6">
-                Recovered
-              </Typography>
-              <Paper className={classes.block}>
-                <Typography
-                  className={classes.dataText}
-                  color="primary"
-                  variant="h3"
+            <Grid item xs={12}>
+              <TimeSeriesChart type={timeSeriesAxis} />
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <Button
+                  style={{ marginTop: 15, marginRight: 5 }}
+                  variant="outlined"
+                  size="small"
+                  onClick={() => setTimeSeriesAxis("linear")}
                 >
-                  {World.Recovered}
-                </Typography>
-              </Paper>
+                  Linear
+                </Button>
+                <Button
+                  style={{ marginTop: 15, marginLeft: 5 }}
+                  variant="outlined"
+                  size="small"
+                  onClick={() => setTimeSeriesAxis("logarithmic")}
+                >
+                  Logarithmic
+                </Button>
+              </div>
             </Grid>
           </Grid>
-
-          <TableContainer component={Paper}>
-            <Table
-              className={classes.table}
-              size="small"
-              aria-label="a dense table"
-            >
-              <TableHead>
-                <TableRow>
-                  <TableCell>Country</TableCell>
-                  <TableCell align="right">Cases</TableCell>
-                  <TableCell align="right">Deaths</TableCell>
-                  <TableCell align="right">Recovered</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>{rowsCountry}</TableBody>
-            </Table>
-          </TableContainer>
         </Grid>
       </Grid>
     </Fragment>
