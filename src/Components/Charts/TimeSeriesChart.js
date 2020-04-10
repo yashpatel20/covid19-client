@@ -31,9 +31,9 @@ const TimeSeriesChart = ({ type }) => {
   const datasets = [
     {
       label: "Cases",
-      backgroundColor: "#f50057",
+      backgroundColor: "#673ab7",
       data: data,
-      fill: false,
+      fill: true,
     },
   ];
 
@@ -72,10 +72,6 @@ const TimeSeriesChart = ({ type }) => {
   const options = {
     legend: {
       display: false,
-    },
-    title: {
-      display: true,
-      text: "Time series of Indian Cases",
     },
     scales: {
       xAxes: [

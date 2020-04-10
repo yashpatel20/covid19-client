@@ -10,7 +10,7 @@ const CountryChart = () => {
 
   const getCountryData = async () => {
     const response = await axios.get("/api/covid19/World");
-    const data = response.data.slice(1);
+    const data = response.data.slice(1, 19);
     const res = await axios.get("/api/covid19/India");
     const india = res.data[res.data.length - 3];
     data.push({
@@ -34,26 +34,25 @@ const CountryChart = () => {
 
   console.log(data);
   const colors = [
-    "#9CB4E8",
-    "#2E2D54",
-    "#187882",
-    "#46820B",
-    "#6D2F02",
-    "#1B74D7",
-    "#96D2CC",
-    "#36B2CC",
-    "#425C70",
-    "#BA5021",
-    "#D1F68E",
-    "#2F4278",
-    "#9EA76C",
-    "#6B3109",
-    "#FAC57F",
-    "#D75476",
-    "#006F8B",
-    "#E8BAE3",
-    "#76A692",
-    "#2D2541",
+    "#ff0000",
+    "#ff2c00",
+    "#ff4100",
+    "#ff5000",
+    "#ff5d00",
+    "#ff6900",
+    "#ff7400",
+    "#fe7e00",
+    "#fd8900",
+    "#fa9400",
+    "#f79e00",
+    "#f2a900",
+    "#edb300",
+    "#e6be00",
+    "#ddc800",
+    "#d0d300",
+    "#bfdf00",
+    "#a2ec00",
+    "#00ff00",
   ];
   const datasets = [
     {
@@ -71,10 +70,6 @@ const CountryChart = () => {
   const options = {
     legend: {
       display: false,
-    },
-    title: {
-      display: true,
-      text: "Cases in most affected countries",
     },
     scales: {
       yAxes: [
