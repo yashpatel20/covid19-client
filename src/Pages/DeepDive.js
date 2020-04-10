@@ -19,10 +19,10 @@ const DeepDive = () => {
         <Fade in={window.location.pathname === "/DeepDive"} timeout={2000}>
           <div>
             <Paper>
-              <div style={{ padding: 20 }}>
+              <div style={{ padding: 5 }}>
                 <Typography
-                  style={{ textAlign: "center", marginBottom: 10 }}
-                  variant="h6"
+                  style={{ textAlign: "center", marginBottom: 5 }}
+                  variant="body1"
                 >
                   Cases in Indian States
                 </Typography>
@@ -36,10 +36,10 @@ const DeepDive = () => {
         <Fade in={window.location.pathname === "/DeepDive"} timeout={3000}>
           <div>
             <Paper>
-              <div style={{ padding: 20 }}>
+              <div style={{ padding: 5 }}>
                 <Typography
-                  style={{ textAlign: "center", marginBottom: 10 }}
-                  variant="h6"
+                  style={{ textAlign: "center", marginBottom: 5 }}
+                  variant="body1"
                 >
                   Cases in Most Affected Countries
                 </Typography>
@@ -54,15 +54,15 @@ const DeepDive = () => {
           <div>
             <Paper>
               <Typography
-                style={{ textAlign: "center", marginBottom: 10 }}
-                variant="h6"
+                style={{ textAlign: "center", marginBottom: 5 }}
+                variant="body1"
               >
                 Time Series of Indian Cases
               </Typography>
               <TimeSeriesChart type={timeSeriesAxis} />
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <Button
-                  style={{ marginTop: 15, marginRight: 5, marginBottom: 10 }}
+                  style={{ marginTop: 10, marginRight: 5, marginBottom: 5 }}
                   variant="outlined"
                   size="small"
                   onClick={() => setTimeSeriesAxis("linear")}
@@ -70,7 +70,7 @@ const DeepDive = () => {
                   Linear
                 </Button>
                 <Button
-                  style={{ marginTop: 15, marginLeft: 5, marginBottom: 10 }}
+                  style={{ marginTop: 10, marginLeft: 5, marginBottom: 5 }}
                   variant="outlined"
                   size="small"
                   onClick={() => setTimeSeriesAxis("logarithmic")}
