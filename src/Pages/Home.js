@@ -54,6 +54,7 @@ const Home = () => {
   const [countryData, setCountryData] = useState([]);
   const [India, setIndia] = useState({});
   const [World, setWorld] = useState({});
+  const [lastUpdate, setLastUpdate] = useState("");
   const [timeSeriesAxis, setTimeSeriesAxis] = useState("linear");
 
   useEffect(() => {
@@ -63,9 +64,16 @@ const Home = () => {
 
   const getStateData = async () => {
     const response = await axios.get("/api/covid19/India");
-    const india = response.data[0];
-    setIndia(india);
-    const data = response.data.slice(1);
+    const india = response.data[response.data.length - 3];
+    const newCases = india.Cases.replace(/[*]/g, "");
+    const newIndia = {
+      ...india,
+      Cases: newCases,
+    };
+    setIndia(newIndia);
+    const lastUpdate = response.data[response.data.length - 1].State;
+    setLastUpdate(lastUpdate);
+    const data = response.data.slice(0, response.data.length - 3);
     setStateData(data);
   };
 
@@ -122,6 +130,7 @@ const Home = () => {
     <Fragment>
       <Typography className={classes.heading} variant="h3" gutterBottom>
         Covid-19 India Tracker
+        <Typography variant="body2">({lastUpdate})</Typography>
       </Typography>
       <Divider className={classes.divider} />
       <Grid container spacing={3}>
@@ -258,25 +267,27 @@ const Home = () => {
               </TableContainer>
             </Grid>
             <Grid item xs={12}>
-              <TimeSeriesChart type={timeSeriesAxis} />
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <Button
-                  style={{ marginTop: 15, marginRight: 5 }}
-                  variant="outlined"
-                  size="small"
-                  onClick={() => setTimeSeriesAxis("linear")}
-                >
-                  Linear
-                </Button>
-                <Button
-                  style={{ marginTop: 15, marginLeft: 5 }}
-                  variant="outlined"
-                  size="small"
-                  onClick={() => setTimeSeriesAxis("logarithmic")}
-                >
-                  Logarithmic
-                </Button>
-              </div>
+              <Paper>
+                <TimeSeriesChart type={timeSeriesAxis} />
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <Button
+                    style={{ marginTop: 15, marginRight: 5, marginBottom: 10 }}
+                    variant="outlined"
+                    size="small"
+                    onClick={() => setTimeSeriesAxis("linear")}
+                  >
+                    Linear
+                  </Button>
+                  <Button
+                    style={{ marginTop: 15, marginLeft: 5, marginBottom: 10 }}
+                    variant="outlined"
+                    size="small"
+                    onClick={() => setTimeSeriesAxis("logarithmic")}
+                  >
+                    Logarithmic
+                  </Button>
+                </div>
+              </Paper>
             </Grid>
           </Grid>
         </Grid>

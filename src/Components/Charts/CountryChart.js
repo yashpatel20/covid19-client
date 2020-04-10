@@ -4,7 +4,6 @@ import axios from "axios";
 
 const CountryChart = () => {
   const [countryData, setCountryData] = useState([]);
-  const [India, setIndia] = useState({});
   useEffect(() => {
     getCountryData();
   }, []);
@@ -13,7 +12,7 @@ const CountryChart = () => {
     const response = await axios.get("/api/covid19/World");
     const data = response.data.slice(1);
     const res = await axios.get("/api/covid19/India");
-    const india = res.data[0];
+    const india = res.data[res.data.length - 3];
     data.push({
       Country: india.State,
       Cases: india.Cases,
@@ -47,6 +46,14 @@ const CountryChart = () => {
     "#BA5021",
     "#D1F68E",
     "#2F4278",
+    "#9EA76C",
+    "#6B3109",
+    "#FAC57F",
+    "#D75476",
+    "#006F8B",
+    "#E8BAE3",
+    "#76A692",
+    "#2D2541",
   ];
   const datasets = [
     {

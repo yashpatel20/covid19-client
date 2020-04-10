@@ -17,7 +17,7 @@ const styles = makeStyles({
 const Navbar = () => {
   const classes = styles();
   return (
-    <AppBar>
+    <AppBar className="nav">
       <Toolbar className="nav-container">
         <Button
           className={classes.button}
