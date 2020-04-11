@@ -42,8 +42,8 @@ const styles = makeStyles({
     marginBottom: 20,
   },
   maingrid: {
-    paddingLeft: 100,
-    paddingRight: 100,
+    paddingLeft: 25,
+    paddingRight: 25,
   },
 });
 

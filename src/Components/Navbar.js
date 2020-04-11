@@ -6,11 +6,15 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core";
+import { sizing } from "@material-ui/system";
+import PublicIcon from "@material-ui/icons/Public";
+import Tooltip from "@material-ui/core/Tooltip";
+import IconButton from "@material-ui/core/IconButton";
 
 const styles = makeStyles({
   button: {
-    marginLeft: 10,
-    marginRight: 10,
+    marginLeft: 15,
+    marginRight: 15,
   },
 });
 
@@ -20,6 +24,19 @@ const Navbar = () => {
     <AppBar className="nav">
       <Toolbar className="nav-container">
         <Button
+          size="small"
+          className={classes.button}
+          color="inherit"
+          component={Link}
+          to="/"
+        >
+          <Tooltip title="Home" placement="top">
+            <IconButton color="inherit">
+              <PublicIcon fontSize="large" />
+            </IconButton>
+          </Tooltip>
+        </Button>
+        <Button
           className={classes.button}
           color="inherit"
           component={Link}
@@ -28,6 +45,7 @@ const Navbar = () => {
           Home
         </Button>
         <Button
+          size="small"
           className={classes.button}
           color="inherit"
           component={Link}
@@ -36,6 +54,7 @@ const Navbar = () => {
           Deep Dive
         </Button>
         <Button
+          size="small"
           className={classes.button}
           color="inherit"
           component={Link}
@@ -44,6 +63,7 @@ const Navbar = () => {
           Safety Precautions
         </Button>
         <Button
+          size="small"
           className={classes.button}
           color="inherit"
           component={Link}
@@ -52,6 +72,7 @@ const Navbar = () => {
           Helpline
         </Button>
         <Button
+          size="small"
           className={classes.button}
           color="inherit"
           component={Link}

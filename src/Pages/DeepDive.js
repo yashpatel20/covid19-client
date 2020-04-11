@@ -14,7 +14,7 @@ import Button from "@material-ui/core/Button";
 const DeepDive = () => {
   const [timeSeriesAxis, setTimeSeriesAxis] = useState("linear");
   return (
-    <Grid container spacing={3}>
+    <Grid styles={{ paddingLeft: 25, paddingRight: 25 }} container spacing={3}>
       <Grid item xs={12} sm={6}>
         <Fade in={window.location.pathname === "/DeepDive"} timeout={2000}>
           <div>
