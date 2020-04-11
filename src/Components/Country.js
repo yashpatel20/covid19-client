@@ -21,17 +21,17 @@ const styles = makeStyles({
     minWidth: 300,
   },
   subHeading: {
-    marginBottom: 15,
+    marginBottom: 10,
   },
   blockGrid: {
-    marginBottom: 10,
+    marginBottom: 15,
   },
   block: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    minHeight: 70,
+    minHeight: 50,
   },
   blockText: {
     textAlign: "center",
@@ -41,7 +41,7 @@ const styles = makeStyles({
     paddingRight: 5,
   },
   divider: {
-    marginBottom: 20,
+    marginBottom: 10,
   },
 });
 

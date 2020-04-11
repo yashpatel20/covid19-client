@@ -41,6 +41,10 @@ const styles = makeStyles({
   divider: {
     marginBottom: 20,
   },
+  maingrid: {
+    paddingLeft: 100,
+    paddingRight: 100,
+  },
 });
 
 const Home = () => {
@@ -58,7 +62,7 @@ const Home = () => {
   };
 
   return (
-    <Fragment>
+    <div className={classes.maingrid}>
       <Typography className={classes.heading} variant="h3" gutterBottom>
         India Covid-19 Tracker
         <Typography variant="body2">({lastUpdate})</Typography>
@@ -68,7 +72,7 @@ const Home = () => {
         <State />
         <Country />
       </Grid>
-    </Fragment>
+    </div>
   );
 };
 
