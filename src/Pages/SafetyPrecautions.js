@@ -23,6 +23,9 @@ const styles = makeStyles({
     display: "flex",
     padding: 5,
   },
+  divider: {
+    marginBottom: 20,
+  },
   image: {
     minWidth: 80,
     minHeight: 80,
@@ -59,9 +62,6 @@ const styles = makeStyles({
     paddingLeft: 5,
     paddingRight: 5,
   },
-  divider: {
-    marginBottom: 20,
-  },
   maingrid: {
     paddingLeft: 25,
     paddingRight: 25,
@@ -72,7 +72,11 @@ const SafetyPrecautions = () => {
   const classes = styles();
   return (
     <Fragment>
-      <Typography variant="h4" className={classes.heading}>
+      <Typography
+        style={{ marginBottom: 10 }}
+        variant="h4"
+        className={classes.heading}
+      >
         FIVE STEPS TO PREVENT COVID-19
       </Typography>
       <Divider className={classes.divider} />
