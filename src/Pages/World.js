@@ -1,15 +1,11 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import Country from "../Components/Country";
 import axios from "axios";
 
-//Components
-import State from "../Components/State";
-import Country from "../Components/Country";
-import TimeSeries from "../Components/TimeSeries";
-
-//mui
-import Typography from "@material-ui/core/Typography";
+//MUI
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 
 const styles = makeStyles({
@@ -47,9 +43,9 @@ const styles = makeStyles({
     paddingRight: 25,
   },
 });
-
-const Home = () => {
+const World = () => {
   const classes = styles();
+
   const [lastUpdate, setLastUpdate] = useState("");
 
   useEffect(() => {
@@ -70,11 +66,9 @@ const Home = () => {
       </Typography>
       <Divider className={classes.divider} />
       <Grid container spacing={3}>
-        <State />
-        <TimeSeries />
+        <Country />
       </Grid>
     </div>
   );
 };
-
-export default Home;
+export default World;

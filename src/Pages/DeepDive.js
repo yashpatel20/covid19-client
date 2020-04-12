@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import StateChart from "../Components/Charts/StateChart";
 import CountryChart from "../Components/Charts/CountryChart";
-import TimeSeriesChart from "../Components/Charts/TimeSeriesChart";
+import DeathRecoveredChart from "../Components/Charts/DeathRecovereChart";
 
 //MUI
 import Grid from "@material-ui/core/Grid";
@@ -12,7 +12,6 @@ import { makeStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 
 const DeepDive = () => {
-  const [timeSeriesAxis, setTimeSeriesAxis] = useState("linear");
   return (
     <Grid styles={{ paddingLeft: 25, paddingRight: 25 }} container spacing={3}>
       <Grid item xs={12} sm={6}>
@@ -57,27 +56,9 @@ const DeepDive = () => {
                 style={{ textAlign: "center", marginBottom: 5 }}
                 variant="body1"
               >
-                Time Series of Indian Cases
+                Deaths vs Recovered in India
               </Typography>
-              <TimeSeriesChart type={timeSeriesAxis} />
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <Button
-                  style={{ marginTop: 10, marginRight: 5, marginBottom: 5 }}
-                  variant="outlined"
-                  size="small"
-                  onClick={() => setTimeSeriesAxis("linear")}
-                >
-                  Linear
-                </Button>
-                <Button
-                  style={{ marginTop: 10, marginLeft: 5, marginBottom: 5 }}
-                  variant="outlined"
-                  size="small"
-                  onClick={() => setTimeSeriesAxis("logarithmic")}
-                >
-                  Logarithmic
-                </Button>
-              </div>
+              <DeathRecoveredChart />
             </Paper>
           </div>
         </Fade>

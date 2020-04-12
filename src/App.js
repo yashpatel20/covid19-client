@@ -8,6 +8,7 @@ import SafetyPrecautions from "./Pages/SafetyPrecautions";
 import Helpline from "./Pages/Helpline";
 import LatestUpdates from "./Pages/LatestUpdates";
 import DeepDive from "./Pages/DeepDive";
+import World from "./Pages/World";
 
 //Components
 import Navbar from "./Components/Navbar";
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route path="/SafetyPrecautions">
               <SafetyPrecautions />
+            </Route>
+            <Route path="/World">
+              <World />
             </Route>
             <Route path="/">
               <Home />

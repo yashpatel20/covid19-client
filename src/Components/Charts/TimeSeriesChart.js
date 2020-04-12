@@ -2,17 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Line, defaults } from "react-chartjs-2";
 import axios from "axios";
 
-const TimeSeriesChart = ({ type }) => {
-  const [timeSeries, setTimeSeries] = useState([]);
-  useEffect(() => {
-    getTimeSeriesData();
-  }, []);
-
-  const getTimeSeriesData = async () => {
-    const response = await axios.get("/api/covid19/IndiaTS");
-    setTimeSeries(response.data);
-  };
-
+const TimeSeriesChart = ({ type, timeSeries, color }) => {
   //TODO defaults in one place
   defaults.global.defaultFontColor = "#212121";
   defaults.global.defaultFontFamily = "Roboto";
@@ -21,19 +11,18 @@ const TimeSeriesChart = ({ type }) => {
   const labels = [];
   const data = [];
   timeSeries.forEach((ts) => {
+    console.log(ts);
     labels.push(ts.Date);
     const cases = ts.Cases.replace(/,/g, "");
     data.push(parseInt(cases));
   });
 
-  console.log(data);
-
   const datasets = [
     {
       label: "Cases",
-      backgroundColor: "#673ab7",
+      backgroundColor: color,
       data: data,
-      fill: true,
+      fill: false,
     },
   ];
 
@@ -77,7 +66,7 @@ const TimeSeriesChart = ({ type }) => {
       xAxes: [
         {
           ticks: {
-            min: "2020-03-03",
+            min: "03-03",
           },
         },
       ],

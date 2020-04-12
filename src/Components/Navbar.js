@@ -22,7 +22,7 @@ const Navbar = () => {
   const classes = styles();
   return (
     <AppBar className="nav">
-      <Toolbar className="nav-container">
+      <Toolbar variant="dense" className="nav-container">
         <Button
           size="small"
           className={classes.button}
@@ -42,7 +42,15 @@ const Navbar = () => {
           component={Link}
           to="/"
         >
-          Home
+          India
+        </Button>
+        <Button
+          className={classes.button}
+          color="inherit"
+          component={Link}
+          to="/World"
+        >
+          World
         </Button>
         <Button
           size="small"

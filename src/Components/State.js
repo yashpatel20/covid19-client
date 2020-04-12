@@ -31,7 +31,7 @@ const styles = makeStyles({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    minHeight: 50,
+    minHeight: 70,
   },
   blockText: {
     textAlign: "center",
@@ -93,7 +93,7 @@ const State = () => {
   return (
     <Grid item xs={12} sm={6}>
       <Typography className={classes.subHeading} variant="h5" gutterBottom>
-        India Overview
+        INDIA OVERVIEW
       </Typography>
       <Grid className={classes.blockGrid} container spacing={1}>
         <Grid item xs>
