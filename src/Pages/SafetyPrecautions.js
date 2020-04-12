@@ -7,12 +7,6 @@ import { makeStyles } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Hands from "../utils/images/Hands.png";
-import Elbow from "../utils/images/Elbow.png";
-import Face from "../utils/images/Face.png";
-import Distance from "../utils/images/Distance.png";
-import Feel from "../utils/images/Feel.png";
 
 const styles = makeStyles({
   text: {

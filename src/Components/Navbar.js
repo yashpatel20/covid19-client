@@ -75,9 +75,9 @@ const Navbar = () => {
           className={classes.button}
           color="inherit"
           component={Link}
-          to="/Helpline"
+          to="/Helplines"
         >
-          Helpline
+          Helplines
         </Button>
         <Button
           size="small"

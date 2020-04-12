@@ -28,7 +28,7 @@ function App() {
             <Route path="/DeepDive">
               <DeepDive />
             </Route>
-            <Route path="/Helpline">
+            <Route path="/Helplines">
               <Helpline />
             </Route>
             <Route path="/SafetyPrecautions">

@@ -44,12 +44,14 @@ const DeathRecoveredChart = () => {
   const datasets = [
     {
       label: "Deaths",
+      borderColor: "#e83c00",
       backgroundColor: "#e83c00",
       data: dataOfDeaths,
       fill: false,
     },
     {
       label: "Recovered",
+      borderColor: "#497d00",
       backgroundColor: "#497d00",
       data: dataOfRecovered,
       fill: false,
@@ -63,7 +65,7 @@ const DeathRecoveredChart = () => {
 
   const options = {
     legend: {
-      display: false,
+      display: true,
     },
     scales: {
       xAxes: [

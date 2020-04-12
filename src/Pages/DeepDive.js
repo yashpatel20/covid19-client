@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import StateChart from "../Components/Charts/StateChart";
 import CountryChart from "../Components/Charts/CountryChart";
 import DeathRecoveredChart from "../Components/Charts/DeathRecovereChart";
+import DailyCasesChart from "../Components/Charts/DailyCasesChart";
 
 //MUI
 import Grid from "@material-ui/core/Grid";
@@ -18,7 +19,7 @@ const DeepDive = () => {
         <Fade in={window.location.pathname === "/DeepDive"} timeout={2000}>
           <div>
             <Paper>
-              <div style={{ padding: 5 }}>
+              <div style={{ padding: 10 }}>
                 <Typography
                   style={{ textAlign: "center", marginBottom: 5 }}
                   variant="body1"
@@ -35,7 +36,7 @@ const DeepDive = () => {
         <Fade in={window.location.pathname === "/DeepDive"} timeout={3000}>
           <div>
             <Paper>
-              <div style={{ padding: 5 }}>
+              <div style={{ padding: 10 }}>
                 <Typography
                   style={{ textAlign: "center", marginBottom: 5 }}
                   variant="body1"
@@ -52,20 +53,34 @@ const DeepDive = () => {
         <Fade in={window.location.pathname === "/DeepDive"} timeout={4000}>
           <div>
             <Paper>
-              <Typography
-                style={{ textAlign: "center", marginBottom: 5 }}
-                variant="body1"
-              >
-                Deaths vs Recovered in India
-              </Typography>
-              <DeathRecoveredChart />
+              <div style={{ padding: 10 }}>
+                <Typography
+                  style={{ textAlign: "center", marginBottom: 5 }}
+                  variant="body1"
+                >
+                  Deaths vs Recovered in India
+                </Typography>
+                <DeathRecoveredChart />
+              </div>
             </Paper>
           </div>
         </Fade>
       </Grid>
       <Grid item xs={12} sm={6}>
-        <Fade in={window.location.pathname === "/DeepDive"} timeout={5000}>
-          <div>Chart 4 here</div>
+        <Fade in={window.location.pathname === "/DeepDive"} timeout={4500}>
+          <div>
+            <Paper>
+              <div style={{ padding: 10 }}>
+                <Typography
+                  style={{ textAlign: "center", marginBottom: 5 }}
+                  variant="body1"
+                >
+                  Daily Cases in India
+                </Typography>
+                <DailyCasesChart />
+              </div>
+            </Paper>
+          </div>
         </Fade>
       </Grid>
     </Grid>

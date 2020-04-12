@@ -86,7 +86,7 @@ const Country = () => {
 
   return (
     <Grid item xs={12}>
-      <Grid container spacing={5}>
+      <Grid container spacing={3}>
         <Grid item xs={12}>
           <Typography className={classes.subHeading} variant="h5" gutterBottom>
             WORLD OVERVIEW

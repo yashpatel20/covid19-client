@@ -21,6 +21,7 @@ const TimeSeriesChart = ({ type, timeSeries, color }) => {
     {
       label: "Cases",
       backgroundColor: color,
+      borderColor: color,
       data: data,
       fill: false,
     },
