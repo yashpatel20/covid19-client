@@ -22,8 +22,8 @@ const styles = makeStyles({
     textAlign: "center",
   },
   maingrid: {
-    paddingLeft: 25,
     paddingRight: 25,
+    paddingLeft: 25,
   },
 });
 

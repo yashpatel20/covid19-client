@@ -15,7 +15,6 @@ const styles = makeStyles({
   card: {
     position: "relative",
     display: "flex",
-    padding: 5,
   },
   divider: {
     marginBottom: 20,
@@ -26,7 +25,6 @@ const styles = makeStyles({
     borderRadius: "50%",
   },
   content: {
-    padding: 5,
     paddingLeft: 20,
     objectFit: "cover",
   },
@@ -57,8 +55,8 @@ const styles = makeStyles({
     paddingRight: 5,
   },
   maingrid: {
-    paddingLeft: 25,
     paddingRight: 25,
+    paddingLeft: 25,
   },
 });
 
@@ -75,71 +73,75 @@ const SafetyPrecautions = () => {
       </Typography>
       <Divider className={classes.divider} />
       <Grid className={classes.maingrid} container spacing={3}>
-        <Grid item xs={12}>
-          <Card className={classes.card}>
-            <CardContent className={classes.content}>
-              <Typography color="primary" variant="h5">
-                1. HANDS
-              </Typography>
-              <Typography className={classes.text} varaint="body1">
-                It starts with your hands. Please wash your hands frequently
-                with soap and water or an alcohol-based solution
-              </Typography>
-            </CardContent>
-          </Card>
+        <Grid item xm={12} sm={4}></Grid>
+        <Grid container spacing={3} xm={12} sm={4}>
+          <Grid item xs={12}>
+            <Card className={classes.card}>
+              <CardContent className={classes.content}>
+                <Typography color="primary" variant="h6">
+                  1. HANDS
+                </Typography>
+                <Typography className={classes.text} varaint="body1">
+                  It starts with your hands. Please wash your hands frequently
+                  with soap and water or an alcohol-based solution
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12}>
+            <Card className={classes.card}>
+              <CardContent className={classes.content}>
+                <Typography color="primary" variant="h6">
+                  2. ELBOW
+                </Typography>
+                <Typography className={classes.text} varaint="body1">
+                  Cover your nose and mouth with a bent elbow or tissue when you
+                  sneeze or cough. Dispose of tissue immdiately and wash hands.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12}>
+            <Card className={classes.card}>
+              <CardContent className={classes.content}>
+                <Typography color="primary" variant="h6">
+                  3. FACE
+                </Typography>
+                <Typography className={classes.text} varaint="body1">
+                  Avoid touching your face, particularly your eyes, nose or
+                  mouth to prevent virus from entering your body.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12}>
+            <Card className={classes.card}>
+              <CardContent className={classes.content}>
+                <Typography color="primary" variant="h6">
+                  4. DISTANCE
+                </Typography>
+                <Typography className={classes.text} varaint="body1">
+                  In terms of social interactions, take a step back. Stay
+                  atleast one meter distance from others.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12}>
+            <Card className={classes.card}>
+              <CardContent className={classes.content}>
+                <Typography color="primary" variant="h6">
+                  5. FEEL
+                </Typography>
+                <Typography className={classes.text} varaint="body1">
+                  If you feel unwell, stay home. Please follow all instructions
+                  provided by your local health authorities.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
         </Grid>
-        <Grid item xs={12}>
-          <Card className={classes.card}>
-            <CardContent className={classes.content}>
-              <Typography color="primary" variant="h5">
-                2. ELBOW
-              </Typography>
-              <Typography className={classes.text} varaint="h5">
-                Cover your nose and mouth with a bent elbow or tissue when you
-                sneeze or cough. Dispose of tissue immdiately and wash hands.
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12}>
-          <Card className={classes.card}>
-            <CardContent className={classes.content}>
-              <Typography color="primary" variant="h5">
-                3. FACE
-              </Typography>
-              <Typography className={classes.text} varaint="h5">
-                Avoid touching your face, particularly your eyes, nose or mouth
-                to prevent virus from entering your body.
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12}>
-          <Card className={classes.card}>
-            <CardContent className={classes.content}>
-              <Typography color="primary" variant="h5">
-                4. DISTANCE
-              </Typography>
-              <Typography className={classes.text} varaint="h5">
-                In terms of social interactions, take a step back. Stay atleast
-                one meter distance from others.
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12}>
-          <Card className={classes.card}>
-            <CardContent className={classes.content}>
-              <Typography color="primary" variant="h5">
-                5. FEEL
-              </Typography>
-              <Typography className={classes.text} varaint="h5">
-                If you feel unwell, stay home. Please follow all instructions
-                provided by your local health authorities.
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+        <Grid item xm={12} sm={4}></Grid>
       </Grid>
     </Fragment>
   );
