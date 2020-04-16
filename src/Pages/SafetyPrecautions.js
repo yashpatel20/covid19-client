@@ -12,22 +12,11 @@ const styles = makeStyles({
   text: {
     paddingLeft: 4,
   },
-  card: {
-    position: "relative",
-    display: "flex",
-  },
+
   divider: {
     marginBottom: 20,
   },
-  image: {
-    minWidth: 80,
-    minHeight: 80,
-    borderRadius: "50%",
-  },
-  content: {
-    paddingLeft: 20,
-    objectFit: "cover",
-  },
+
   heading: {
     textAlign: "center",
   },
@@ -54,10 +43,6 @@ const styles = makeStyles({
     paddingLeft: 5,
     paddingRight: 5,
   },
-  maingrid: {
-    paddingRight: 25,
-    paddingLeft: 25,
-  },
 });
 
 const SafetyPrecautions = () => {
@@ -74,7 +59,7 @@ const SafetyPrecautions = () => {
       <Divider className={classes.divider} />
       <Grid className={classes.maingrid} container spacing={3}>
         <Grid item xm={12} sm={4}></Grid>
-        <Grid container spacing={3} xm={12} sm={4}>
+        <Grid container spacing={1} xm={12} sm={4}>
           <Grid item xs={12}>
             <Card className={classes.card}>
               <CardContent className={classes.content}>

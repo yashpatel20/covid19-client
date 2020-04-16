@@ -13,6 +13,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Divider from "@material-ui/core/Divider";
+import Link from "@material-ui/core/Link";
 
 const styles = makeStyles({
   divider: {
@@ -59,7 +60,7 @@ const Helpline = () => {
       </Typography>
       <Divider className={classes.divider} />
       <Grid className={classes.maingrid} container spacing={3}>
-        <Grid item xs={12}>
+        <Grid item xs={12} sm={6}>
           <TableContainer component={Paper}>
             <Table
               className={classes.table}
@@ -75,6 +76,79 @@ const Helpline = () => {
               <TableBody>{rows}</TableBody>
             </Table>
           </TableContainer>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <Paper>
+                <div style={{ padding: 10 }}>
+                  <Typography variant="body1">
+                    Ministry of Health and Family Welfare, Gov. of India
+                  </Typography>
+                  <Link href="HTTPS://WWW.MOHFW.GOV.IN/">
+                    <Typography variant="body1">
+                      HTTPS://WWW.MOHFW.GOV.IN/
+                    </Typography>
+                  </Link>
+                </div>
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper>
+                <div style={{ padding: 10 }}>
+                  <Typography variant="body1">
+                    WHO : COVID-19 Home Page
+                  </Typography>
+                  <Link href="HTTPS://WWW.WHO.INT/EMERGENCIES/DISEASES/NOVEL-CORONAVIRUS-2019">
+                    <Typography variant="body1">
+                      HTTPS://WWW.WHO.INT/EMERGENCIES/DISEASES/NOVEL-CORONAVIRUS-2019
+                    </Typography>
+                  </Link>
+                </div>
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper>
+                <div style={{ padding: 10 }}>
+                  <Typography variant="body1">CDC</Typography>
+                  <Link href="HTTPS://WWW.CDC.GOV/CORONAVIRUS/2019-NCOV/FAQ.HTML">
+                    <Typography variant="body1">
+                      HTTPS://WWW.CDC.GOV/CORONAVIRUS/2019-NCOV/FAQ.HTML
+                    </Typography>
+                  </Link>
+                </div>
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper>
+                <div style={{ padding: 10 }}>
+                  <Typography variant="body1">
+                    Crowdsourced list of Resources & Essentials from across
+                    India
+                  </Typography>
+                  <Link href="HTTPS://BIT.LY/COVID19RESOURCELIST">
+                    <Typography variant="body1">
+                      HTTPS://BIT.LY/COVID19RESOURCELIST
+                    </Typography>
+                  </Link>
+                </div>
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper>
+                <div style={{ padding: 10 }}>
+                  <Typography variant="body1">
+                    COVID-19 Global Tracker
+                  </Typography>
+                  <Link href="https://coronavirus.jhu.edu/map.html">
+                    <Typography variant="body1">
+                      HTTPS://CORONAVIRUS.JHU.EDU/MAP.HTML
+                    </Typography>
+                  </Link>
+                </div>
+              </Paper>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Fragment>
