@@ -2,7 +2,7 @@
 
 Covid-19 Tracker is a website to track cases, deaths and recoveries in Indian states and most affected countries in the world.
 
-It is made using React/Redux with material-ui frontend library.
+It is made using React with material-ui frontend library.
 
 This repo contains just the client. The production website with the static build of the client is hosted on https://github.com/yashpatel20/covid19-api .
 
